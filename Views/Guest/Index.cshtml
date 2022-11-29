@@ -69,12 +69,13 @@
                 document.querySelector('.js_pizzas_table').innerHTML +=
                     `
                                               <div class="col-12 col-md-4 p-2">
-                                                <div class="card post h-100">
+                                                <div class="card pizza h-100">
                                                   <img src="${pizza.image}" class="card-img-top" alt="...">
                                                   <div class="card-body">
                                                     <h5 class="card-title">${pizza.name}</h5>
                                                     <p class="card-text">${pizza.description}</p>
-                                                    <p class="card-text">${pizza.category.name}</p>
+                                                    <p>${pizza.category.name}</p>
+                                                    <div><a  class="btn btn-                                                          primary" href="/Guest/Details/${pizza.id}">Vedi dettagli</a></div>
                                                    </div>
                                                 </div>
                                             </div>

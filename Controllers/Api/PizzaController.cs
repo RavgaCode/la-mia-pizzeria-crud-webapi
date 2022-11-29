@@ -38,5 +38,12 @@ namespace la_mia_pizzeria.Controllers.Api
             return Ok(pizzas);
 
         }
+        [HttpGet("{id}")]
+        public IActionResult Details(int id)
+        {
+           Pizza pizza = _pizzeriaRepository.GetById(id);
+
+            return Ok(pizza);
+        }
     }
 }
