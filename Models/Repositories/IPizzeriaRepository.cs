@@ -7,6 +7,6 @@
         void Create(Pizza pizzaToCreate, List<int> SelectedIngredients);
         void Update(Pizza pizzaToUpdate, Pizza formData, List<int>? SelectedIngredients);
         void Delete(Pizza pizzaToDelete);
-        List<Pizza> SearchByTitle(string? title);
+        List<Pizza> SearchByName(string? name);
     }
 }

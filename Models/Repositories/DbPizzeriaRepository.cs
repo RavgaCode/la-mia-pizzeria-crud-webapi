@@ -70,15 +70,15 @@ namespace la_mia_pizzeria.Models.Repositories
             db.Pizzas.Remove(pizzaToDelete);
             db.SaveChanges();
         }
-        public List<Pizza> SearchByTitle(string? title)
+        public List<Pizza> SearchByName(string? name)
         {
 
             IQueryable<Pizza> query = db.Pizzas.Include("Category").Include("Ingredients");
 
-            if (title == null)
+            if (name == null)
                 return query.ToList();
 
-            return query.Where(pizzaToSearch => pizzaToSearch.Name.ToLower().Contains(title.ToLower())).ToList();
+            return query.Where(pizzaToSearch => pizzaToSearch.Name.ToLower().Contains(name.ToLower())).ToList();
         }
     }
 }
