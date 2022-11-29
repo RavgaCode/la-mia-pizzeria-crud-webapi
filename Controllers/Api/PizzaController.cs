@@ -30,5 +30,13 @@ namespace la_mia_pizzeria.Controllers.Api
             return Ok(pizzas);
 
         }
+        public IActionResult Search(string? title)
+        {
+
+            List<Pizza> pizzas = _pizzeriaRepository.SearchByTitle(title);
+
+            return Ok(pizzas);
+
+        }
     }
 }
