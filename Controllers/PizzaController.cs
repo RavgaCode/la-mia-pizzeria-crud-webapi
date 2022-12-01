@@ -9,18 +9,20 @@ using Microsoft.SqlServer.Server;
 using Microsoft.CodeAnalysis;
 using Azure;
 using System.Diagnostics;
+using Microsoft.AspNetCore.Authorization;
 
 
 namespace la_mia_pizzeria.Controllers
 {
+    [Authorize]
     public class PizzaController : Controller
     {
         PizzaDbContext db;
         IPizzeriaRepository pizzeriaRepository;
 
-        public PizzaController(IPizzeriaRepository _pizzeriaRepository) :base()
+        public PizzaController(IPizzeriaRepository _pizzeriaRepository, PizzaDbContext _db) :base()
         {
-            db = new PizzaDbContext();
+            db = _db;
             pizzeriaRepository = _pizzeriaRepository;   
         }
         public IActionResult Index()
